@@ -1,13 +1,13 @@
-#![doc(html_root_url = "https://docs.rs/mvc-rs/0.2.0")]
+#![doc(html_root_url = "https://docs.rs/mvc-rs/0.3.0")]
 //! mvc traits for Rust
 //!
 
 use std::error::Error;
 
 /// trait View
-pub trait View<P, T> {
+pub trait View<T> {
   /// wr
-  fn wr(&mut self, p: P) -> Result<(), Box<dyn Error>>;
+  fn wr<P>(&mut self, p: P) -> Result<(), Box<dyn Error>>;
   /// reg
   fn reg(&mut self, c: Vec<T>) -> ();
   /// col
