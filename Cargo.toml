@@ -1,11 +1,11 @@
 [package]
 name = "mvc-rs"
-version = "0.1.0" # change with html_root_url in lib.rs
+version = "0.2.0" # change with html_root_url in lib.rs
 edition = "2021"
 authors = ["nomissbowling <nomissbowling@yahoo.co.jp>"]
 
 description = "mvc traits for Rust"
-keywords = ["model", "view", "controller"]
+keywords = ["mvc", "model", "view", "controller"]
 categories = ["development-tools"]
 license = "MIT"
 
