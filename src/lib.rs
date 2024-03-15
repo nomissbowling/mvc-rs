@@ -1,13 +1,23 @@
-#![doc(html_root_url = "https://docs.rs/mvc-rs/0.3.0")]
+#![doc(html_root_url = "https://docs.rs/mvc-rs/0.3.2")]
 //! mvc traits for Rust
 //!
 
 use std::error::Error;
 
-/// trait View
-pub trait View<T> {
+/// trait TPacket
+pub trait TPacket {
+  /// as_str
+  fn as_str(&self) -> &str;
+  /// to_vec
+  fn to_vec(&self) -> Vec<u16>;
+  /// flat
+  fn flat(&self) -> Vec<u8>;
+}
+
+/// trait TView
+pub trait TView<T> {
   /// wr
-  fn wr<P>(&mut self, p: P) -> Result<(), Box<dyn Error>>;
+  fn wr(&mut self, p: impl TPacket) -> Result<(), Box<dyn Error>>;
   /// reg
   fn reg(&mut self, c: Vec<T>) -> ();
   /// col
